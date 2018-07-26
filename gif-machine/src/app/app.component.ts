@@ -9,8 +9,10 @@ import axios from 'axios';
 })
 export class AppComponent {
   title = 'app';
+  gifs: object[] = [];
 
   apiCall() {
+    const searchResults = []
     console.log('This works');
 
     const search = 'cats';
@@ -18,8 +20,25 @@ export class AppComponent {
 
     axios.get(queryURL).then(function(response){
 
-      var result = response.data
-      console.log(result);
+      console.log(response.data.data)
+      console.log(response.data.data[0].images.fixed_height.url)
+      response.data.data.forEach(result => {
+        const gif = {
+          animatedGif: result.images.fixed_height.url,
+          stillGif: result.images.fixed_height_still.url,
+          rating: result.rating
+        }
+        console.log(gif);
+        searchResults.push(gif);
+      });
+
+      // console.log(this.gifs);
+
+      // const result = response.data
+      // console.log(result[0].images.fixed_height.url);
+  
+      // this.gifs = response.data
+      // console.log(this.gifs);
 
       //This will display 10 gifs with their ratings
       // for (var i = 0; i < 10; i++) {
@@ -38,6 +57,8 @@ export class AppComponent {
       //   gifDiv.append(gifImg).append(p);
       //   $("#gifs").prepend(gifDiv);
       // }
+      console.log(searchResults);
     });
+    this.gifs = searchResults;
   }
 }

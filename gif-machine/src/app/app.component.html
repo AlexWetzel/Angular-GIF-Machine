@@ -1,1 +1,36 @@
-<button (click)="apiCall()">Search</button>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <div><h1>gif Machine</h1></div>
+    </div>
+    <div class="col-xs-6 search">
+      <div>
+        <form>
+          <label for="search-term">Search for gifs</label>
+                <input class="search" id="search-term" type="text">
+                <button class="btn btn-primary" (click)="apiCall(event)">search</button>
+        </form>
+        <button class="btn btn-primary" (click)="apiCall()">search</button>
+
+      </div>
+      
+      <div>
+
+      </div>
+
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div id="gifs" class="jumbotron">
+          <div
+          *ngFor="let gif of gifs"        
+          class="gif-div">
+          <img src="{{ gif.stillGif }}" alt="">
+          <p>Rating: {{ gif.rating }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
