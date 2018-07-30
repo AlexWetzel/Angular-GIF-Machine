@@ -1,0 +1,7 @@
+<span class="gif-div">
+  <img 
+    (click)="isClicked = ! isClicked"
+    [src]="!isClicked ? this.gifPanel.stillGif : this.gifPanel.animatedGif"
+    alt="">
+  <p>Rating: {{ gifPanel.rating }}</p>
+</span>

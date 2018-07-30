@@ -24,12 +24,10 @@
   <div class="row">
     <div class="col-xs-12">
       <div id="gifs" class="jumbotron">
-          <div
-          *ngFor="let gif of gifs"        
-          class="gif-div">
-          <img src="{{ gif.stillGif }}" alt="">
-          <p>Rating: {{ gif.rating }}</p>
-        </div>
+        <app-gif-panel        
+          *ngFor="let gif of gifs"
+          [gifPanel]="gif"
+        ></app-gif-panel>
       </div>
     </div>
   </div>
