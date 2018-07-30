@@ -4,22 +4,12 @@
       <div><h1>gif Machine</h1></div>
     </div>
     <div class="col-xs-6 search">
-      <div>
-        <form>
-          <label for="search-term">Search for gifs</label>
-                <input class="search" id="search-term" type="text">
-                <button class="btn btn-primary" (click)="apiCall(event)">search</button>
-        </form>
-        <button class="btn btn-primary" (click)="apiCall()">search</button>
-
-      </div>
-      
-      <div>
-
-      </div>
-
+      <form>
+        <label for="search-term">Search for gifs</label>
+        <input class="search" id="search-term" type="text" #queryInput>
+        <button class="btn btn-primary" type="button" (click)="apiCall()">search</button>
+      </form>
     </div>
-    
   </div>
   <div class="row">
     <div class="col-xs-12">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 // import * as request from 'request';
 import axios from 'axios';
 
@@ -8,6 +8,8 @@ import axios from 'axios';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('queryInput') queryElement: ElementRef;
+
   title = 'app';
   gifs: object[] = [];
 
@@ -15,7 +17,9 @@ export class AppComponent {
     const searchResults = []
     console.log('This works');
 
-    const search = 'cats';
+    // const search = 'cats';
+    const search = this.queryElement.nativeElement.value;
+    console.log(search);
     const queryURL = "https://api.giphy.com/v1/gifs/search?api_key=cb04bd6c938f44708d8dd7cbbefb25ad&q=" + search + "&limit=10&offset=0&lang=en";
 
     axios.get(queryURL).then(function(response){
