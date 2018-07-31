@@ -7,13 +7,20 @@
       <form>
         <label for="search-term">Search for gifs</label>
         <input class="search" id="search-term" type="text" #queryInput>
-        <button class="btn btn-primary" type="button" (click)="apiCall()">search</button>
+        <button class="btn btn-primary" type="button" (click)="getTopicFromForm()">search</button>
       </form>
+
+      <button
+        *ngFor="let topic of topics"
+        class="btn btn-primary"
+        type="button"
+        (click)="apiCall(topic)"
+      >{{ topic }}</button>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <div id="gifs" class="jumbotron">
+      <div class="jumbotron">
         <app-gif-panel        
           *ngFor="let gif of gifs"
           [gifPanel]="gif"
