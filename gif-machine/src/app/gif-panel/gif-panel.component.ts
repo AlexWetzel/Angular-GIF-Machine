@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GifPanelComponent implements OnInit {
   @Input() gifPanel;
-  isclicked: boolean = false;
+  isClicked: boolean = false;
  
 
   constructor() { }
