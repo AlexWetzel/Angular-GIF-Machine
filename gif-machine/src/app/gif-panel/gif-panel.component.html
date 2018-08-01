@@ -1,7 +1,11 @@
-<span>
-  <img 
-    (click)="isClicked = ! isClicked"
-    [src]="!isClicked ? this.gifPanel.stillGif : this.gifPanel.animatedGif"
-    alt="">
-  <p>Rating: {{ gifPanel.rating }}</p>
-</span>
+  <div class="col-xs-4">
+    <div class="thumbnail">
+      <img 
+        (click)="isClicked = ! isClicked"
+        [src]="!isClicked ? this.gifPanel.stillGif : this.gifPanel.animatedGif"
+        alt="">
+      <div class="caption">
+        <p>Rating: {{ gifPanel.rating }}</p>
+      </div>
+    </div>
+  </div>

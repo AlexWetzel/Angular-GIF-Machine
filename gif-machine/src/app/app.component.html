@@ -1,31 +1,32 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6">
-      <div><h1>gif Machine</h1></div>
+    <div class="col-xs-12 page-header">
+      <h1 class="text-center">gif Machine</h1>
     </div>
-    <div class="col-xs-6 search">
-      <form>
+    <div class="col-xs-12">
+      <form class="form-inline">
         <label for="search-term">Search for gifs</label>
-        <input class="search" id="search-term" type="text" #queryInput>
+        <input class="form-control" id="search-term" type="text" #queryInput>
         <button class="btn btn-primary" type="button" (click)="getTopicFromForm()">search</button>
       </form>
-
-      <button
-        *ngFor="let topic of topics"
-        class="btn btn-primary"
-        type="button"
-        (click)="apiCall(topic)"
-      >{{ topic }}</button>
     </div>
   </div>
+  <hr />
   <div class="row">
-    <div class="col-xs-12">
-      <div class="jumbotron">
+    <button
+      *ngFor="let topic of topics"
+      class="btn btn-primary"
+      type="button"
+      (click)="apiCall(topic)"
+      >{{ topic }}</button>
+  </div>
+  <hr />
+  <div class="row">
+      <!-- <div class="jumbotron"> -->
         <app-gif-panel        
           *ngFor="let gif of gifs"
           [gifPanel]="gif"
         ></app-gif-panel>
-      </div>
-    </div>
+      <!-- </div> -->
   </div>
 </div>
