@@ -3,7 +3,7 @@
     <div class="col-xs-12 page-header">
       <h1 class="text-center">gif Machine</h1>
     </div>
-    <div class="col-xs-12">
+    <div class="col-xs-12 text-center">
       <form class="form-inline">
         <label for="search-term">Search for gifs</label>
         <input class="form-control" id="search-term" type="text" #queryInput>
@@ -11,22 +11,22 @@
       </form>
     </div>
   </div>
-  <hr />
+  <br />
   <div class="row">
+    <div class="center-block text-center">
     <button
       *ngFor="let topic of topics"
       class="btn btn-primary"
       type="button"
       (click)="apiCall(topic)"
       >{{ topic }}</button>
+    </div>
   </div>
   <hr />
   <div class="row">
-      <!-- <div class="jumbotron"> -->
-        <app-gif-panel        
-          *ngFor="let gif of gifs"
-          [gifPanel]="gif"
-        ></app-gif-panel>
-      <!-- </div> -->
+    <app-gif-panel        
+      *ngFor="let gif of gifs"
+      [gifPanel]="gif"
+    ></app-gif-panel>
   </div>
 </div>

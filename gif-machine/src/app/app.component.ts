@@ -26,16 +26,12 @@ export class AppComponent {
     const queryURL = "https://api.giphy.com/v1/gifs/search?api_key=cb04bd6c938f44708d8dd7cbbefb25ad&q=" + topic + "&limit=10&offset=0&lang=en";
 
     axios.get(queryURL).then(function(response){
-
-      console.log(response.data.data)
-      console.log(response.data.data[0].images.fixed_height.url)
       response.data.data.forEach(result => {
         const gif = {
           animatedGif: result.images.fixed_height.url,
           stillGif: result.images.fixed_height_still.url,
           rating: result.rating
         }
-        console.log(gif);
         searchResults.push(gif);
       });
     });
