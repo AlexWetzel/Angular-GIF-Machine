@@ -6,7 +6,7 @@ Angular GIF Machine is an Angular app that lets you query the Giphy API, and dis
 
 Although similar to my other gif machine app, this app uses Angular and features a new user interface.
 
-## Using the app
+## Using The App
 
 In the middle of the web page there is a form. Type in a topic and click search. This send a query to the Giphy API and returns 10 gifs.
 
@@ -26,3 +26,8 @@ The gifs will be still by default. They will animate once they are clicked, and 
 
 - Option to display gif data
 
+## Known Bugs
+
+- Hitting the ener key in the search form will refresh the page. Click the 'search' button to avoid this issue.
+
+- Multiple topic buttons can be added for the same topic.
