@@ -1,6 +1,6 @@
 # Angular-GIF-Machine
 
-Link: https://alexwetzel.github.io/GifMachine/
+Link: https://alexwetzel.github.io/Angular-GIF-Machine/
 
 Angular GIF Machine is an Angular app that lets you query the Giphy API, and displays gifs that you can click to play or stop.
 
@@ -19,7 +19,7 @@ The gifs will be still by default. They will animate once they are clicked, and 
 ## Possible Improvements
 
 - Topic button deletion
-
+  
 - Improved query options, such as by rating and number of results
 
 - User accounts to save favorite gifs
